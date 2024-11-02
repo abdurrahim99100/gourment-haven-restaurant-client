@@ -4,7 +4,6 @@ import { FaBook, FaHome, FaPhone, FaShoppingCart, FaStreetView, FaWallet } from 
 
 const UserHome = () => {
   const { user } = useAuth();
-  console.log(user.photoURL)
   return (
     <>
       <Helmet>
@@ -42,12 +41,18 @@ const UserHome = () => {
         {/*  */}
         <div className="flex mt-5 mx-20">
           <div className="w-1/2 h-[50vh] bg-[#d19f5483] flex flex-col items-center justify-center">
-            <img
-              src={user?.photoURL}
-              className="border-4 border-gray-400 rounded-full shadow-lg w-44 h-44 object-cover"
-              alt=""
-            />
-            <p className="my-2 text-3xl font-mono font-bold">{user?.displayName}</p>
+            {
+              user ? (<>
+                <img
+                  src={user?.photoURL}
+                  className="border-4 border-gray-400 rounded-full shadow-lg w-44 h-44 object-cover"
+                  alt=""
+                />
+                <p className="my-2 text-3xl font-mono font-bold uppercase">{user?.displayName}</p>
+              </>) : (<>
+                <p className="text-lg font-mono font-bold">Loading...</p>
+              </>)
+            }
           </div>
           {/* your activities */}
           <div className="flex flex-col items-center justify-center w-1/2 h-[50vh] bg-[#FEF9C3]">
