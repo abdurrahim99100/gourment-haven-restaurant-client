@@ -18,23 +18,25 @@ const OurMenu = () => {
     const saladMenu = menus.filter(menu => menu.category === 'salad');
     const soupMenu = menus.filter(menu => menu.category === 'soup');
     return (
-        <section>
+        <>
             <Helmet>
                 <title>Gourment | Our Menu</title>
             </Helmet>
-            <Cover imageItem={coverImage} title={'our menu'} description={'world you like to try a dish'} />
-            {/* offered menu */}
-            <SectionTitle subHeading={"Don't miss"} heading={"today's offers"} />
-            <MenuCategory items={offeredMenu} />
-            {/* desserts */}
-            <MenuCategory items={dessertsMenu} imageItem={dessertImage} title={'desserts'} />
-            {/* pizza */}
-            <MenuCategory items={pizzaMenu} imageItem={pizzaImage} title={'pizza'} />
-            {/* salad */}
-            <MenuCategory items={saladMenu} imageItem={saladImage} title={'salad'} />
-            {/* soup */}
-            <MenuCategory items={soupMenu} imageItem={soupImage} title={'soup'} />
-        </section>
+            <section>
+                <Cover imageItem={coverImage} title={'our menu'} description={'world you like to try a dish'} />
+                {/* offered menu */}
+                <SectionTitle subHeading={"Don't miss"} heading={"today's offers"} />
+                <MenuCategory items={offeredMenu} />
+                {/* desserts */}
+                <MenuCategory items={dessertsMenu} imageItem={dessertImage} title={'desserts'} />
+                {/* pizza */}
+                <MenuCategory items={pizzaMenu} imageItem={pizzaImage} title={'pizza'} />
+                {/* salad */}
+                <MenuCategory items={saladMenu} imageItem={saladImage} title={'salad'} />
+                {/* soup */}
+                <MenuCategory items={soupMenu} imageItem={soupImage} title={'soup'} />
+            </section>
+        </>
     );
 };
 
