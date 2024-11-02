@@ -89,7 +89,7 @@ export const router = createBrowserRouter([
       {
         path: 'admin-update-items/:id',
         element: <AdminRoute><UpdateItems /></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/menu/${params.id}`)
+        loader: ({ params }) => fetch(`https://gourment-haven-restaurant-server.vercel.app/menu/${params.id}`)
       },
       {
         path: 'admin-all-users',
