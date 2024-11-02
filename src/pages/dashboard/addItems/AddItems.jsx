@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const AddItems = () => {
 
@@ -13,9 +14,10 @@ const AddItems = () => {
     const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
+    const [disabled, setDisable] = useState(false);
 
     const onSubmit = async (data) => {
-        console.log(data)
+        setDisable(true); // set disable
         const imageFile = { image: data.image[0] };
         const result = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
@@ -41,6 +43,7 @@ const AddItems = () => {
                     timer: 1500
                 });
                 reset();
+                setDisable(false)
             }
         }
     };
@@ -75,6 +78,9 @@ const AddItems = () => {
                                     <option value="soups">Soups</option>
                                     <option value="desserts">Desserts</option>
                                     <option value="drinks">Drinks</option>
+                                    <option value="offered">Offered</option>
+                                    <option value="popular">Popular</option>
+                                    <option value="hot">Hot</option>
                                 </select>
                                 <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                                     <svg className="fill-current h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -108,9 +114,11 @@ const AddItems = () => {
                             <span className="text-gray-400">{errors.details.message}</span>
                         )}
                     </div>
-                    <div className="flex items-center gap-1 p-2 rounded text-sm bg-yellow-500 w-24">
-                        <input type="submit" value={'Add Item'} />
-                        <FaUtensils className="text-white" />
+                    <div>
+                        <button disabled={disabled} className="flex items-center gap-1 p-2 rounded text-sm bg-yellow-500 w-24" type="submit">
+                            <span>Add Item</span>
+                            <FaUtensils className="text-white" />
+                        </button>
                     </div>
                 </form>
             </section>

@@ -36,14 +36,16 @@ const NavBar = () => {
         <Link to={'/dashboard/user-home'}>Dashboard</Link>
       </li>
     }
-    <li>
-      <Link to={'dashboard/my-cart'}>
-        <button className="btn bg-gray-400 border-none">
-          Inbox
-          <div className="badge badge-secondary bg-[#ee24c3] border-none">+{cart?.length || 0}</div>
-        </button>
-      </Link>
-    </li>
+    {
+      user && <li>
+        <Link to={'dashboard/my-cart'}>
+          <button className="btn bg-gray-400 border-none">
+            Inbox
+            <div className="badge badge-secondary bg-[#ee24c3] border-none">+{cart?.length || 0}</div>
+          </button>
+        </Link>
+      </li>
+    }
     {/* conditional users */}
     {
       user ?
