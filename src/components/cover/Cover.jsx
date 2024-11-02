@@ -21,7 +21,7 @@ const Cover = ({ imageItem, title }) => {
                                 Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                                 quasi. In deleniti eaque aut repudiandae et a id nisi.
                             </p>
-                            <button className="btn btn-primary">Get Started</button>
+                            <button className="btn px-6 py-3 text-md bg-gradient-to-b from-[#D4AF37] to-[#B8860B] text-white font-semibold rounded-md shadow-lg hover:shadow-2xl hover:from-[#E1C16E] hover:to-[#A67B5B] transform transition duration-300 ease-in-out border-none">Get Started</button>
                         </div>
                     </div>
                 </div>

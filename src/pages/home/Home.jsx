@@ -7,7 +7,7 @@ import Category from './homeComponents/Category';
 
 const Home = () => {
   return (
-    <div>
+    <section>
       <Helmet>
         <title>Gourment | Home</title>
       </Helmet>
@@ -16,19 +16,7 @@ const Home = () => {
       <PopularMenu />
       <Featured />
       <Testimonials />
-
-      <div>
-        <p>hello</p>
-      </div>
-      <div>
-        <h3>hello h3</h3>
-      </div>
-
-      <div>
-        <h3>hello h3</h3>
-      </div>
-
-    </div>
+    </section>
   );
 };
 

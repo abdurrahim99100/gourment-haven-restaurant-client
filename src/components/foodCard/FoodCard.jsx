@@ -11,7 +11,7 @@ const FoodCard = ({ item }) => {
     const [, refetch] = useCart();
 
     const { image, name, price, recipe } = item;
-    const handleAddToCArt = item => {
+    const handleAddToCart = item => {
         if (user && user?.email) {
             const { _id, image, name, price } = item;
             const cartItem = { menuItemId: _id, image, name, price, email: user.email };
@@ -50,20 +50,28 @@ const FoodCard = ({ item }) => {
                 }
             });
         }
-    }
+    };
+
     return (
-        <div className="card card-compact bg-base-100 w-96 shadow-xl">
+        <div className="card card-compact bg-base-100 w-[380px] md:w-[340px] lg:w-[320px] xl:w-[380px] shadow-xl">
             <figure>
                 <img
                     src={image}
                     alt="Shoes" />
             </figure>
-            <p className='absolute right-0 bg-black text-white px-3 m-5 rounded-sm'>{price}</p>
+            <p className='absolute right-0 bg-black text-white px-3 m-5 rounded-sm'>${price}</p>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{recipe}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleAddToCArt(item)} className="btn btn-primary">Buy Now</button>
+                    <button
+                        onClick={() => handleAddToCart(item)}
+                        className="btn px-6 py-3 text-md bg-gradient-to-b from-[#D4AF37] to-[#B8860B] text-white font-semibold rounded-md shadow-lg hover:shadow-2xl hover:from-[#E1C16E] hover:to-[#A67B5B] transform transition duration-300 ease-in-out border-none"
+                    >
+                        Buy Now
+                    </button>
+
+
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const MenuCategory = ({ items, imageItem, title }) => {
                     items.map(item => <MenuItems key={item._id} item={item} />)
                 }
                 <Link to={`/order/${title}`}>   
-                    <button className="btn btn-neutral uppercase border-0 border-b-4 py-5">order now</button>
+                    <button className="btn px-6 py-3 text-md bg-gradient-to-b from-[#D4AF37] to-[#B8860B] text-white font-semibold rounded-md shadow-lg hover:shadow-2xl hover:from-[#E1C16E] hover:to-[#A67B5B] transform transition duration-300 ease-in-out border-none">order now</button>
                 </Link>
             </div>
         </div>

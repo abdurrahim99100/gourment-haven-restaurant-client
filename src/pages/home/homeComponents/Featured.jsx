@@ -14,7 +14,7 @@ const Featured = () => {
                     <h4>March 20, 2023 <br />
                         WHERE CAN I GET SOME?</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt quam aspernatur itaque quod aliquam amet at veritatis! Molestias, ipsam ea.</p>
-                    <button style={{background: 'none'}} className="btn btn-neutral uppercase border-0 border-b-4 py-5">red more</button>
+                    <button className="btn px-6 py-3 mt-5 text-md uppercase bg-gradient-to-b from-[#D4AF37] to-[#B8860B] text-white font-semibold rounded-md shadow-lg hover:shadow-2xl hover:from-[#E1C16E] hover:to-[#A67B5B] transform transition duration-300 ease-in-out border-none">red more</button>
                 </div>
             </div>
         </section>
