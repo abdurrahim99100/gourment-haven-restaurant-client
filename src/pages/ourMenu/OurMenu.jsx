@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Cover from '../../components/cover/Cover';
 import MenuCategory from '../../components/menuCategory/MenuCategory';
@@ -12,7 +11,7 @@ import soupImage from '../../assets/menu/soup-bg.jpg';
 
 const OurMenu = () => {
     const [menus] = useMenu();
-    const popularMenu = menus.filter(menu => menu.category === 'popular');
+    // const popularMenu = menus.filter(menu => menu.category === 'popular');
     const offeredMenu = menus.filter(menu => menu.category === 'offered');
     const dessertsMenu = menus.filter(menu => menu.category === 'dessert');
     const pizzaMenu = menus.filter(menu => menu.category === 'pizza');

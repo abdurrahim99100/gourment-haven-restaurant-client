@@ -10,7 +10,7 @@ const Cover = ({ imageItem, title }) => {
             strength={-300}
         >
             <div
-                className="hero h-[700px] text-white"
+                className="hero h-[700px] text-white mb-96"
             >
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-neutral-content text-center">

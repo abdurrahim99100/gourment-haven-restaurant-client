@@ -15,7 +15,7 @@ const FoodCard = ({ item }) => {
         if (user && user?.email) {
             const { _id, image, name, price } = item;
             const cartItem = { menuItemId: _id, image, name, price, email: user.email };
-            fetch('https://gourment-haven-restaurant-server.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

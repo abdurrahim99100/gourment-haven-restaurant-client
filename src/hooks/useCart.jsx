@@ -6,9 +6,9 @@ const useCart = () => {
     const token = localStorage.getItem('access-token');
     const { isLoading, refetch, data: cart = [], error } = useQuery({
         queryKey: ['cart', user?.email],
-        enabled: !loading,
+        enabled: !loading && !!user,
         queryFn: async () => {
-            const res = await fetch(`https://gourment-haven-restaurant-server.vercel.app/carts?email=${user?.email}`, {
+            const res = await fetch(`http://localhost:5000/carts?email=${user?.email}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

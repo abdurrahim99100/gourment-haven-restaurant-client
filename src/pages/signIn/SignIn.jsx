@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import authenticationPng from '../../assets/others/authentication2.png';
 
 const SignIn = () => {
     const { signIn } = useContext(authContext);
@@ -41,8 +42,7 @@ const SignIn = () => {
             <div className="container mx-auto px-6 py-8">
                 <div className="flex flex-wrap items-center justify-center h-screen">
                     <div className="w-full md:w-1/2">
-                        <h3 className="text-2xl font-bold">Stay connected with us!</h3>
-                        <p className=" mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus quia molestias delectus reprehenderit sequi iste ut, quod alias. Consequuntur, quis?</p>
+                        <img src={authenticationPng} alt="" />
                     </div>
                     <div className="w-full md:w-1/2 mt-8 md:mt-0 rounded shadow-md px-8 pt-6 pb-8 mb-4">
                         <form onSubmit={handleSubmit(onSubmit)} action="#">
